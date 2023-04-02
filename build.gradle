@@ -1,0 +1,3 @@
+buildscript {
+    apply from: file('gradle/buildscript.gradle'), to: buildscript
+}

@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'java-library'
+}
+
+repositories {
+
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "started", "passed", "skipped", "failed"
+        if (Boolean.getBoolean("test.verbose")) {
+            // events "passed", "skipped", "failed"
+            showExceptions true
+            exceptionFormat "full"
+            showStandardStreams true
+        }
+        debug {
+            events "started", "passed", "skipped", "failed", "standard_out", "standard_error"
+            exceptionFormat "full"
+        }
+    }
+}
