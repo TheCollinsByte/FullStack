@@ -8,6 +8,6 @@ task killAnyExistingWebpackProcesses(type: Exec) {
 task npmServeDev(type: NpmTask) { // can't be an NpmTask because we need to set the version string env var
     dependsOn killAnyExistingWebpackProcesses
     dependsOn npmInstall
-    args = ['run', 'serveDev']
+    args = ['run', 'start']
 }
 
