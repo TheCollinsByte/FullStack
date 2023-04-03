@@ -27,7 +27,7 @@ dependencies {
     // Spring Boot web, security and Data Jpa Dependencies
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    //implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
     // Map Struct Dependencies
     implementation 'org.mapstruct:mapstruct:1.5.3.Final'
