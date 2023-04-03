@@ -12,3 +12,15 @@
         transform: rotate(360deg);
     }
 }
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
