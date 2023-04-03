@@ -23,8 +23,21 @@ export default class AuthContent extends React.Component {
 
     render() {
         return (
-            <div>
-                {this.state.data && this.state.data.map((line) => <p>{line}</p>)}
+            <div className='row justify-content-md-center'>
+                <div className='col-4'>
+                    <div className='card' style={{widthd: "18rem"}}>
+                        <div className='card-body'>
+
+                            <h5 className='card-title'>Backend response</h5>
+                            <p className='card-text'>Content:</p>
+
+                            <ul>
+                                {this.state.data && this.state.data.map((line) => <li key={line}>{line}</li>)}
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     };
