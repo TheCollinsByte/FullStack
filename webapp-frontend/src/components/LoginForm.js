@@ -45,12 +45,12 @@ export default class LoginForm extends React.Component {
                             <li className='nav-item' role='presentation'>
                                 <button 
                                     className={classNames("nav-link", this.state.active === "login" ? "active" : "")} 
-                                    id='tab-login'>Login</button>
+                                    id='tab-login' onClick={() => this.setState({active: "login"})}>Login</button>
                             </li>
                             <li className='nav-item' role='presentation'>
                                 <button 
                                     className={classNames("nav-link", this.state.active === "register" ? "active" : "")} 
-                                    id='tab-register'>Register</button>
+                                    id='tab-register'onClick={() => this.setState({active: "register"})}>Register</button>
                             </li>
                         </ul>
 
