@@ -1,10 +1,41 @@
 plugins {
     id 'java'
     id 'java-library'
+    id 'org.springframework.boot' version '3.0.5'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+
+group = 'com.addaboy.api'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
 
 repositories {
+    mavenCentral()
+}
 
+dependencies {
+    // Postgresql Database Driver
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // Spring Boot web, security and Data Jpa Dependencies
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Map Struct Dependencies
+    implementation 'org.mapstruct:mapstruct:1.5.3.Final'
+    implementation 'org.mapstruct:mapstruct-processor:1.5.3.Final'
+
+    // Lombok Dependencies
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 }
 
 test {
