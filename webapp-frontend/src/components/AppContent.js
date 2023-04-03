@@ -3,6 +3,7 @@ import WelcomeContent from "./WelcomeContent";
 import AuthContent from "./AuthContent";
 import LoginForm from "./LoginForm";
 import { request } from "../axios_helper";
+import { Buttons } from "./Buttons";
 
 export default class AppContent extends React.Component {
     constructor(props) {
@@ -56,9 +57,13 @@ export default class AppContent extends React.Component {
     render() {
         return (
             <div>
+
+                <Buttons login={this.login} logout={this.logout} />
+
                 {this.state.componentToShow === "Welcome" && <WelcomeContent />}
                 {this.state.componentToShow === "Messages" && <AuthContent />}
                 {this.state.componentToShow === "Login" && <LoginForm  onLogin={this.onLogin} onRegister={this.onRegister} />}
+
             </div>
         )
     };
