@@ -56,14 +56,14 @@ export default class LoginForm extends React.Component {
 
                         <div className='tab-content'>
                            <div className={classNames("tab-pane", "fade", this.state.active === "login" ? " show active" : "")} id='pills-login'>
-                                <form>
+                                <form onSubmit={this.onSubmitLogin}>
                                     <div className='form-outline mb-4'>
-                                        <input type='login' id='loginName' name='login' className='form-control'/>
+                                        <input type='login' id='loginName' name='login' className='form-control' onChange={this.onChangeHandler} />
                                         <label className='form-label' htmlFor='loginName'>Username</label>
                                     </div>
 
                                     <div className='form-outline mb-4'>
-                                        <input type='password' id='loginPassword' name='password' className='form-control'/>
+                                        <input type='password' id='loginPassword' name='password' className='form-control' onChange={this.onChangeHandler} />
                                         <label className='form-label' htmlFor='loginPassword'>Password</label>
                                     </div>
 
@@ -72,15 +72,25 @@ export default class LoginForm extends React.Component {
                             </div> 
 
                            <div className={classNames("tab-pane", "fade", this.state.active === "register" ? " show active" : "")} id="pills-register">
-                                <form>
+                                <form onSubmit={this.onSubmitRegister}>
                                     <div className='form-outline mb-4'>
-                                        <input type='text' id='firstName' name='firstName' className='form-control'/>
+                                        <input type='text' id='firstName' name='firstName' className='form-control' onChange={this.onChangeHandler}/>
                                         <label className='form-label' htmlFor='firstName'>First Name</label>
                                     </div>
 
                                     <div className='form-outline mb-4'>
-                                        <input type='password' id='loginPassword' name='password' className='form-control'/>
-                                        <label className='form-label' htmlFor='loginPassword'>Password</label>
+                                        <input type='text' id='lastName' name='lastName' className='form-control' onChange={this.onChangeHandler}/>
+                                        <label className='form-label' htmlFor='lastName'>Last Name</label>
+                                    </div>
+
+                                    <div className='form-outline mb-4'>
+                                        <input type='text' id='login' name='login' className='form-control' onChange={this.onChangeHandler}/>
+                                        <label className='form-label' htmlFor='login'>Username</label>
+                                    </div>
+
+                                    <div className='form-outline mb-4'>
+                                        <input type='password' id='password' name='password' className='form-control' onChange={this.onChangeHandler}/>
+                                        <label className='form-label' htmlFor='password'>Password</label>
                                     </div>
 
                                     <button type='submit' className='btn btn-primary btn-block mb-4'>Sign in</button>
