@@ -2,8 +2,8 @@ import * as React from "react";
 import WelcomeContent from "./WelcomeContent";
 import AuthContent from "./AuthContent";
 import LoginForm from "./LoginForm";
+import Buttons from "./Buttons";
 import { request } from "../axios_helper";
-import { Buttons } from "./Buttons";
 
 export default class AppContent extends React.Component {
     constructor(props) {
