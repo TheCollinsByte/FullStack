@@ -12,9 +12,7 @@ public class RestExceptionHandler {
 
     /**
      *  This method will surround every controller but will only execute if and app exception is thrown
-     *
      */
-
     @ExceptionHandler(value = {AppException.class})
     @ResponseBody
     public ResponseEntity<ErrorDto> handleException(AppException exception) {
