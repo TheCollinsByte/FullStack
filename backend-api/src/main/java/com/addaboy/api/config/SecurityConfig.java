@@ -16,14 +16,15 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 @EnableWebSecurity
 public class SecurityConfig {
 
+    private final UserAuthProvider userAuthProvider;
     private final UserAuthenticationEntryPoint userAuthenticationEntryPoint;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public HttpSecurity securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .exceptionHandling().authenticationEntryPoint(userAuthenticationEntryPoint) // Returns a security custom message when a security endpoint occurs
                 .and()
-                .addFilterBefore(new JwtAuthFilter(), BasicAuthenticationFilter.class)      // JWT Filter before any authentication filter of spring security
+                .addFilterBefore(new JwtAuthFilter(userAuthProvider), BasicAuthenticationFilter.class)      // JWT Filter before any authentication filter of spring security
                 .csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) // Specifying that it's a Stateless application this will lead to no session or cookie will be created by spring
                 .and()
@@ -32,6 +33,6 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 );
 
-        return http.build();
+        return http;
     }
 }
