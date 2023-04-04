@@ -10,4 +10,4 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: false
     hibernate:
-      ddl-auto: create
+      ddl-auto: create    # Letting the Hibernate to create the database based of the Object Definition (Not the best practice) instead use the database migration tool (liquibase or Flyway)
