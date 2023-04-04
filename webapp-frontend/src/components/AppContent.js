@@ -3,7 +3,7 @@ import WelcomeContent from "./WelcomeContent";
 import AuthContent from "./AuthContent";
 import LoginForm from "./LoginForm";
 import Buttons from "./Buttons";
-import { request } from "../axios_helper";
+import { request, setAuthToken } from "../axios_helper";
 
 export default class AppContent extends React.Component {
     constructor(props) {
@@ -31,6 +31,7 @@ export default class AppContent extends React.Component {
             { login: username, password: password }
         ).then((response) => {
             this.setState({componentToShow: "Messages"});
+            setAuthToken(response.data.token);
         }).catch((error) => {
             this.setState({componentToShow: "Welcome"});
         });
@@ -49,6 +50,7 @@ export default class AppContent extends React.Component {
             }
         ).then((response) => {
             this.setState({componentToShow: "Messages"});
+            setAuthToken(response.data.token);
         }).catch((error) => {
             this.setState({componentToShow: "Welcome"});
         });
