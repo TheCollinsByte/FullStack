@@ -10,6 +10,9 @@ import org.mapstruct.Mapping;
 public interface UserMapper {
     UserDto toUserDto(User user);
 
+    /**
+     *  Ignored the field because it's not in the same format
+     */
     @Mapping(target = "password", ignore = true)
     User signUpToUser(SignUpDto userDto);
 }
