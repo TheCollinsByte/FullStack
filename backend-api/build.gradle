@@ -32,13 +32,13 @@ dependencies {
     // JWT (Create and Verity JWT)
     implementation 'com.auth0:java-jwt:4.3.0'
 
-    // Map Struct Dependencies
-    implementation 'org.mapstruct:mapstruct:1.5.3.Final'
-    implementation 'org.mapstruct:mapstruct-processor:1.5.3.Final'
-
     // Lombok Dependencies
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    // Map Struct Dependencies
+    implementation 'org.mapstruct:mapstruct:1.5.3.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
 }
 
 test {
