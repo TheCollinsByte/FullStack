@@ -20,7 +20,7 @@ public class SecurityConfig {
     private final UserAuthenticationEntryPoint userAuthenticationEntryPoint;
 
     @Bean
-    public HttpSecurity securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .exceptionHandling().authenticationEntryPoint(userAuthenticationEntryPoint) // Returns a security custom message when a security endpoint occurs
                 .and()
@@ -33,6 +33,6 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 );
 
-        return http;
+        return http.build();
     }
 }
